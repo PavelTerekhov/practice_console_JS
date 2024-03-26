@@ -187,3 +187,28 @@ for (let i = 1; i <= dataArr.length; i++) {
 }
 
 console.log(resultDataArr);
+
+
+//// Необходимо написать код, который при помощи звездочек (*) в консоли нарисует вот такую фигуру:
+
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+// ***********
+
+const lines = 5;
+let resultChristmas = '';
+// Проверяется именно переменная result, формируйте строку в ней
+for (let i = 0; i <= lines; i++) {
+    for (let j = 0; j < lines - i; j++) {
+        resultChristmas += " ";
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+        resultChristmas += "*";
+    }
+    resultChristmas += "\n";
+}
+
+console.log(resultChristmas);
