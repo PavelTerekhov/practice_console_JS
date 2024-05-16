@@ -651,3 +651,56 @@ function fib(num) {
 }
     
 fib(4);
+
+
+
+
+//         ОБЪЕКТЫ Деструкторизация объектов
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function () {   //Свой созданный метод
+        console.log('Test');
+    }
+};
+
+options.makeTest(); // Запуск своего созданного метода
+
+
+console.log(options.name);
+
+console.log(options['colors']['bg']); // Обращение к вложенному свойству в объекте
+
+delete options.name; // удаление свойства
+
+
+
+let counter = 0 // Приём счётщика для поиска кол-ва ключ: значение
+
+for (let key in options) {
+    if (typeof(options[key] === 'object')) {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`); // Метод перебора для вложенной структуры в объекте
+        counter++
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`); // Метод перебора for in объекта options
+    counter++
+    }
+}
+
+console.log(counter);
+
+// Деструктуризация оюъекта 
+
+const {border, bg} = options.colors; 
+console.log(border);
+
+
+    
